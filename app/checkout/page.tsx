@@ -281,6 +281,7 @@ function CheckoutContent() {
       const orderDbId = localStorage.getItem('checkout_order_db_id')
       let orderData
 
+      const orderPayload = {
         customerEmail: formData.email || `${formData.phone.trim()}@customer.hayaayurvedics`,
         customerName: `${formData.firstName || 'Customer'} ${formData.lastName || ''}`.trim(),
         phone: formData.phone,
