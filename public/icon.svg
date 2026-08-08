@@ -1,0 +1,7 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="#1e4620"/>
+  <path d="M90 125C90 125 130 98 130 72C130 52 114 40 98 40C90 40 85 45 80 50C75 45 70 40 62 40C46 40 30 52 30 72C30 98 70 125 70 125L90 125Z" fill="#c59b27"/>
+  <!-- Leaf accent lines inside heart/nature motif -->
+  <path d="M80 55C80 55 83 75 70 90" stroke="#1e4620" stroke-width="4" stroke-linecap="round"/>
+  <path d="M80 65C80 65 88 80 95 92" stroke="#1e4620" stroke-width="4" stroke-linecap="round"/>
+</svg>
