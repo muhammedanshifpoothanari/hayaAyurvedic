@@ -14,7 +14,7 @@ export function middleware(request: NextRequest) {
     const token = request.cookies.get('admin_token')?.value
 
     // If token is missing or invalid, redirect to login page
-    if (!token || token !== 'kiswa_admin_secure_session_2026') {
+    if (!token || token !== 'haya_admin_secure_session_2026') {
       const loginUrl = new URL('/admin/login', request.url)
       return NextResponse.redirect(loginUrl)
     }

@@ -192,7 +192,7 @@ export default function CartPage() {
                 {/* Promo Code Application */}
                 <form onSubmit={handleApplyCoupon} className="mb-4">
                   <label className="block text-xs font-bold text-gray-700 mb-1.5">
-                    Have a promo coupon? Try <span className="text-amber-700 font-mono">KISWA10</span> or <span className="text-amber-700 font-mono">WELCOME20</span>
+                    Have a promo coupon? Try <span className="text-amber-700 font-mono">HAYA10</span> or <span className="text-amber-700 font-mono">WELCOME20</span>
                   </label>
                   <div className="flex gap-2">
                     <input

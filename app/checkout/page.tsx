@@ -59,11 +59,11 @@ function CheckoutContent() {
       return ''
     }
 
-    const autoPhone = getAutoValue('kiswa_customer_phone', 'nusuki_customer_phone', 'user_phone', 'phone', 'customer_phone')
-    const autoName = getAutoValue('kiswa_customer_name', 'nusuki_customer_name', 'user_name', 'customer_name')
-    const autoCity = getAutoValue('kiswa_customer_city', 'nusuki_customer_city', 'user_city', 'customer_city')
-    const autoAddress = getAutoValue('kiswa_customer_address', 'nusuki_customer_address', 'user_address', 'customer_address')
-    const autoEmail = getAutoValue('kiswa_customer_email', 'nusuki_customer_email', 'user_email', 'email')
+    const autoPhone = getAutoValue('haya_customer_phone', 'user_phone', 'phone', 'customer_phone')
+    const autoName = getAutoValue('haya_customer_name', 'user_name', 'customer_name')
+    const autoCity = getAutoValue('haya_customer_city', 'user_city', 'customer_city')
+    const autoAddress = getAutoValue('haya_customer_address', 'user_address', 'customer_address')
+    const autoEmail = getAutoValue('haya_customer_email', 'user_email', 'email')
 
     setFormData(prev => ({
       ...prev,
@@ -85,17 +85,17 @@ function CheckoutContent() {
               setItems([{
                 id: found._id || found.id || '1',
                 productId: found._id || found.id,
-                productName: found.name?.en || found.name || 'Rawdat Al-Haramain Prayer Rug',
-                price: found.price || 65.22,
+                productName: found.name?.en || found.name || 'Ayurvedic Treatment Package',
+                price: found.price || 1500,
                 quantity: 1,
-                image: found.image || '/products/prayer-mat-1.png'
+                image: found.image || '/treatments/panchakarma.jpg'
               }])
             }
           }
         })
         .catch(() => {})
     } else {
-      const savedCart = localStorage.getItem('kiswa_cart_items')
+      const savedCart = localStorage.getItem('haya_cart_items')
       if (savedCart) {
         try {
           const parsed = JSON.parse(savedCart)
@@ -230,11 +230,11 @@ function CheckoutContent() {
       
       // Auto-save fields to localStorage
       if (value.trim()) {
-        if (name === 'phone') localStorage.setItem('kiswa_customer_phone', value.trim())
-        if (name === 'firstName' || name === 'lastName') localStorage.setItem('kiswa_customer_name', `${updated.firstName} ${updated.lastName}`.trim())
-        if (name === 'city') localStorage.setItem('kiswa_customer_city', value.trim())
-        if (name === 'address') localStorage.setItem('kiswa_customer_address', value.trim())
-        if (name === 'email') localStorage.setItem('kiswa_customer_email', value.trim())
+        if (name === 'phone') localStorage.setItem('haya_customer_phone', value.trim())
+        if (name === 'firstName' || name === 'lastName') localStorage.setItem('haya_customer_name', `${updated.firstName} ${updated.lastName}`.trim())
+        if (name === 'city') localStorage.setItem('haya_customer_city', value.trim())
+        if (name === 'address') localStorage.setItem('haya_customer_address', value.trim())
+        if (name === 'email') localStorage.setItem('haya_customer_email', value.trim())
       }
 
       return updated
@@ -277,12 +277,11 @@ function CheckoutContent() {
 
     setIsSubmitting(true)
     try {
-      localStorage.setItem('kiswa_customer_phone', formData.phone.trim())
+      localStorage.setItem('haya_customer_phone', formData.phone.trim())
       const orderDbId = localStorage.getItem('checkout_order_db_id')
       let orderData
 
-      const orderPayload = {
-        customerEmail: formData.email || `${formData.phone.trim()}@customer.kiswa`,
+        customerEmail: formData.email || `${formData.phone.trim()}@customer.hayaayurvedics`,
         customerName: `${formData.firstName || 'Customer'} ${formData.lastName || ''}`.trim(),
         phone: formData.phone,
         items: items.map(item => ({
@@ -301,8 +300,8 @@ function CheckoutContent() {
         paymentMethod: 'tabby',
         shippingAddress: {
           street: formData.address || 'Address provided via phone',
-          city: formData.city || 'Riyadh',
-          postCode: formData.postCode || '11564',
+          city: formData.city || 'Wayanad',
+          postCode: formData.postCode || '673121',
           country: formData.country,
         }
       }
@@ -324,7 +323,7 @@ function CheckoutContent() {
       }
       
       if (orderData.success) {
-        setPlacedOrderId(orderData.data?.orderId || localStorage.getItem('checkout_order_id') || 'KSW-ORDER')
+        setPlacedOrderId(orderData.data?.orderId || localStorage.getItem('checkout_order_id') || 'HAYA-ORDER')
 
         // 1. Mark the abandoned cart session as converted/recovered
         try {
@@ -352,7 +351,7 @@ function CheckoutContent() {
           body: JSON.stringify({
             firstName: formData.firstName || 'Valued',
             lastName: formData.lastName || 'Customer',
-            email: formData.email || `${formData.phone.trim()}@customer.kiswa`,
+            email: formData.email || `${formData.phone.trim()}@customer.hayaayurvedics`,
             phone: formData.phone,
             address: {
               street: formData.address || 'Address provided via phone',
@@ -428,7 +427,7 @@ function CheckoutContent() {
               <PartyPopper size={22} className="text-amber-500 scale-x-[-1]" />
             </div>
 
-            <p className="text-gray-500 text-sm mb-5">Thank you for shopping with Kiswa! 🎉</p>
+            <p className="text-gray-500 text-sm mb-5">Thank you for booking with Haya Ayurvedics! 🎉</p>
 
             <div className="bg-gray-50 rounded-xl p-4 mb-6 border border-gray-100 text-left space-y-2">
               <div className="flex justify-between items-center">

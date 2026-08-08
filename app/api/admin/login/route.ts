@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
       const response = NextResponse.json({ success: true, message: 'Logged in successfully' })
       
       // Set secure HTTP-only cookie valid for 7 days
-      response.cookies.set('admin_token', 'kiswa_admin_secure_session_2026', {
+      response.cookies.set('admin_token', 'haya_admin_secure_session_2026', {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',

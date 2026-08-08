@@ -38,10 +38,8 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined)
 
 const DEFAULT_COUPONS: Record<string, number> = {
-  KISWA10: 10,
+  HAYA10: 10,
   WELCOME20: 20,
-  RAMADAN15: 15,
-  PROMO50: 50,
   SPECIAL10: 10,
 }
 
@@ -61,7 +59,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     setIsMounted(true)
     try {
-      const savedCart = localStorage.getItem('kiswa_cart_items')
+      const savedCart = localStorage.getItem('haya_cart_items')
       if (savedCart) {
         const parsed = JSON.parse(savedCart)
         if (Array.isArray(parsed) && parsed.length > 0) {
@@ -72,10 +70,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
             {
               id: '1',
               productId: '1',
-              name: 'Rawdat Al-Haramain Luxury Prayer Rug',
-              price: 65.22,
+              name: 'Ayurvedic Wellness Treatment Consultation',
+              price: 1500,
               quantity: 1,
-              image: '/products/prayer-mat-1.png'
+              image: '/treatments/panchakarma.jpg'
             }
           ])
         }
@@ -84,15 +82,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
           {
             id: '1',
             productId: '1',
-            name: 'Rawdat Al-Haramain Luxury Prayer Rug',
-            price: 65.22,
+            name: 'Ayurvedic Wellness Treatment Consultation',
+            price: 1500,
             quantity: 1,
-            image: '/products/prayer-mat-1.png'
+            image: '/treatments/panchakarma.jpg'
           }
         ])
       }
 
-      const savedCoupon = localStorage.getItem('kiswa_applied_coupon')
+      const savedCoupon = localStorage.getItem('haya_applied_coupon')
       if (savedCoupon) {
         setAppliedCoupon(JSON.parse(savedCoupon))
       }
@@ -104,7 +102,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   // 2. Persist cart to localStorage whenever it changes
   useEffect(() => {
     if (isMounted) {
-      localStorage.setItem('kiswa_cart_items', JSON.stringify(cart))
+      localStorage.setItem('haya_cart_items', JSON.stringify(cart))
     }
   }, [cart, isMounted])
 
@@ -112,9 +110,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (isMounted) {
       if (appliedCoupon) {
-        localStorage.setItem('kiswa_applied_coupon', JSON.stringify(appliedCoupon))
+        localStorage.setItem('haya_applied_coupon', JSON.stringify(appliedCoupon))
       } else {
-        localStorage.removeItem('kiswa_applied_coupon')
+        localStorage.removeItem('haya_applied_coupon')
       }
     }
   }, [appliedCoupon, isMounted])
@@ -131,11 +129,11 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
 
     // Get any customer details we have saved in localStorage
-    const phone = localStorage.getItem('kiswa_customer_phone') || ''
-    const customerName = localStorage.getItem('kiswa_customer_name') || ''
-    const city = localStorage.getItem('kiswa_customer_city') || ''
-    const address = localStorage.getItem('kiswa_customer_address') || ''
-    const customerEmail = localStorage.getItem('kiswa_customer_email') || ''
+    const phone = localStorage.getItem('haya_customer_phone') || ''
+    const customerName = localStorage.getItem('haya_customer_name') || ''
+    const city = localStorage.getItem('haya_customer_city') || ''
+    const address = localStorage.getItem('haya_customer_address') || ''
+    const customerEmail = localStorage.getItem('haya_customer_email') || ''
 
     if (cart.length > 0) {
       // Send cart details to API
@@ -166,10 +164,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const itemToAdd: CartItem = {
       id: newItem.id || newItem.productId || `item_${Date.now()}`,
       productId: (newItem.productId || newItem.id || '').toString(),
-      name: newItem.name || 'Kiswa Product',
-      price: newItem.price || 99.00,
+      name: newItem.name || 'Ayurvedic Treatment Package',
+      price: newItem.price || 1500,
       quantity: newItem.quantity || 1,
-      image: newItem.image || '/products/prayer-mat-1.png',
+      image: newItem.image || '/treatments/panchakarma.jpg',
       color: newItem.color || ''
     }
 

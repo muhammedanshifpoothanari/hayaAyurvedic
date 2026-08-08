@@ -5,16 +5,16 @@ import { useLanguage } from '@/hooks/useLanguage'
 
 const announcements = {
   en: [
-    'Spend SAR 250.00 and get free delivery',
-    'Welcome to Kiswa - Premium Islamic Products',
-    'All The Way From Makkah',
-    'Premium quality at competitive prices',
+    'Authentic Kerala Ayurvedic Healing in Wayanad',
+    'NABH Accredited & Certified Physicians',
+    'Book online video consultations or residential stays',
+    'Experience traditional Panchakarma & rejuvenation retreats',
   ],
   ar: [
-    'احصل على توصيل مجاني عند شرائك بمبلغ 250 ريال',
-    'أهلاً بك في كسوة - أفضل المنتجات الإسلامية',
-    'مباشر من مكة المكرمة',
-    'جودة عالية بأسعار تنافسية',
+    'العلاج الأيورفيدي الأصيل من كيرالا في واياناد',
+    'مرفق معتمد من NABH وأطباء مؤهلين',
+    'احجز استشارة عبر الفيديو أو إقامة علاجية',
+    'جرب علاجات البانشاكارما التقليدية وتجديد النشاط',
   ],
 }
 

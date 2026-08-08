@@ -1,5 +1,5 @@
 // =============================================================================
-// KISWA - MongoDB TypeScript Interfaces (Models)
+// HAYA AYURVEDICS - MongoDB TypeScript Interfaces (Models)
 // =============================================================================
 // These interfaces define the shape of documents in each MongoDB collection.
 // Products/Categories are NOT here — they live in data/products.ts (static).
