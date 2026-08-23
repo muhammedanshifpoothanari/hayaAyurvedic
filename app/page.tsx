@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import BookingModal from '@/components/BookingModal'
+import DoctorTabs from '@/components/DoctorTabs'
 import { treatments, packages, doctors } from '@/data/ayurvedaData'
 import { Check, Calendar, ArrowRight, ShieldCheck, Heart, User, Clock, Compass } from 'lucide-react'
 
@@ -12,6 +13,7 @@ export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false)
   const [selectedTreatmentId, setSelectedTreatmentId] = useState('')
   const [selectedPackageId, setSelectedPackageId] = useState('')
+  const [activeDoctorId, setActiveDoctorId] = useState(doctors[0]?.id ?? '')
 
   const openBookingForTreatment = (id: string) => {
     setSelectedTreatmentId(id)
@@ -29,6 +31,28 @@ export default function Home() {
     <div className="w-full bg-[#fdfbf7] min-h-screen text-gray-800 selection:bg-[#c59b27]/30 selection:text-[#1e4620]">
       <Header />
       <Slider />
+
+      {/* Doctor Tab Strip — right after banner for instant visibility */}
+      <section className="relative bg-[#fdfbf7] border-b border-[#e2dacb]/50 py-8 overflow-hidden">
+
+        {/* Full crossing grid — small cells matching reference */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Crect width='30' height='30' fill='none'/%3E%3Cline x1='0' y1='0' x2='30' y2='0' stroke='%23c8a84b' stroke-width='0.5' stroke-opacity='0.35'/%3E%3Cline x1='0' y1='0' x2='0' y2='30' stroke='%23c8a84b' stroke-width='0.5' stroke-opacity='0.35'/%3E%3C/svg%3E")`,
+            backgroundSize: '30px 30px',
+          }}
+        />
+
+        {/* Left & right vignette fades */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#fdfbf7] to-transparent z-10" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#fdfbf7] to-transparent z-10" />
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-[10px] uppercase tracking-widest font-extrabold text-[#c59b27] mb-5">Meet Our Physicians</p>
+          <DoctorTabs activeId={activeDoctorId} onSelect={setActiveDoctorId} />
+        </div>
+      </section>
 
       {/* Intro section */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,10 +73,6 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex items-center gap-3 bg-[#f4efe6]/50 p-3 rounded-xl border border-[#e2dacb]/40">
-                <ShieldCheck className="text-[#1e4620]" size={24} />
-                <span className="text-sm font-bold text-gray-700">NABH Accredited Facility</span>
-              </div>
-              <div className="flex items-center gap-3 bg-[#f4efe6]/50 p-3 rounded-xl border border-[#e2dacb]/40">
                 <Compass className="text-[#1e4620]" size={24} />
                 <span className="text-sm font-bold text-gray-700">Traditional Kerala Lineage</span>
               </div>
@@ -61,9 +81,9 @@ export default function Home() {
 
           <div className="lg:col-span-5 relative">
             <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#e2dacb]/40">
-              <img 
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" 
-                alt="Ayurvedic Wellness Kerala" 
+              <img
+                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"
+                alt="Ayurvedic Wellness Kerala"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -93,26 +113,22 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {treatments.map((treatment) => (
-              <div 
-                key={treatment.id} 
+              <div
+                key={treatment.id}
                 onClick={() => openBookingForTreatment(treatment.id)}
                 className="bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-md border border-[#e2dacb]/50 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row group cursor-pointer hover:border-[#c59b27]/40"
               >
                 {/* Image */}
                 <div className="md:w-2/5 relative h-48 md:h-auto min-h-[200px]">
-                  <img 
-                    src={treatment.image} 
-                    alt={treatment.name.en} 
+                  <img
+                    src={treatment.image}
+                    alt={treatment.name.en}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
                       // Fallback image URL if generated image is loading or missing
                       (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=400&q=80"
                     }}
                   />
-                  <div className="absolute top-4 left-4 bg-[#1e4620]/90 backdrop-blur-sm text-[#fdfbf7] text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
-                    <Clock size={12} />
-                    {treatment.duration}
-                  </div>
                 </div>
 
                 {/* Info */}
@@ -155,85 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wellness Packages */}
-      <section id="packages" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <span className="text-xs uppercase tracking-widest font-extrabold text-[#c59b27]">
-            Residential Healing Retreats
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#1e4620]">
-            All-Inclusive Ayurvedic Packages
-          </h2>
-          <p className="text-gray-600 text-sm md:text-base font-medium">
-            Immerse yourself in complete purification stays including luxury cottage accommodation, dietary organic meals, treatments, and medicines.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {packages.map((pkg) => (
-            <div 
-              key={pkg.id} 
-              onClick={() => openBookingForPackage(pkg.id)}
-              className="bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-lg border border-[#e2dacb]/60 flex flex-col justify-between group hover:shadow-xl transition-all duration-300 cursor-pointer hover:border-[#c59b27]/40"
-            >
-              <div>
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden">
-                  <img 
-                    src={pkg.image} 
-                    alt={pkg.name.en} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end text-white">
-                    <div>
-                      <p className="text-xs uppercase tracking-wider font-extrabold text-[#c59b27]">{pkg.duration}</p>
-                      <h3 className="text-lg font-bold font-serif">{pkg.name.en}</h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 space-y-4">
-                  <p className="text-xs text-gray-400 font-semibold italic">{pkg.name.ml}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed font-medium">
-                    {pkg.description.en}
-                  </p>
-
-                  <div className="space-y-2 pt-2">
-                    <p className="text-xs uppercase font-extrabold tracking-wider text-gray-500">Package Inclusions:</p>
-                    <ul className="space-y-1.5">
-                      {pkg.includes.en.map((inc, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs text-gray-600 font-medium">
-                          <Check size={14} className="text-[#1e4620] shrink-0 mt-0.5" />
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action */}
-              <div className="p-6 pt-0 border-t border-[#e2dacb]/40 mt-4 flex items-center justify-between">
-                <div>
-                  <p className="text-[10px] text-gray-400 uppercase font-extrabold">Price Guide</p>
-                  <p className="text-base font-bold text-[#1e4620]">{pkg.priceEstimate}</p>
-                </div>
-                <button
-                  onClick={() => openBookingForPackage(pkg.id)}
-                  className="bg-[#1e4620] hover:bg-[#1e4620]/90 text-white px-4 py-2 rounded-xl text-xs font-bold transition shadow-sm"
-                >
-                  Inquire Now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Expert Doctors Section */}
       <section id="doctors" className="py-20 bg-[#f4efe6]/40 border-t border-[#e2dacb]/40">
@@ -252,27 +190,28 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {doctors.map((doctor) => (
-              <div 
-                key={doctor.id} 
-                className="bg-[#fdfbf7] rounded-3xl p-6 shadow-md border border-[#e2dacb]/50 flex flex-col sm:flex-row gap-6 items-center"
+              <div
+                key={doctor.id}
+                onClick={() => setIsBookingOpen(true)}
+                className="bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-md border border-[#e2dacb]/50 flex flex-col cursor-pointer group hover:shadow-xl hover:border-[#c59b27]/40 transition-all duration-300"
               >
-                {/* Photo */}
-                <div className="w-32 h-32 rounded-full overflow-hidden shrink-0 border-4 border-[#e2dacb]/40">
-                  <img 
-                    src={doctor.image} 
-                    alt={doctor.name.en} 
-                    className="w-full h-full object-cover"
+                {/* Photo — full width at top */}
+                <div className="w-full h-64 overflow-hidden">
+                  <img
+                    src={doctor.image}
+                    alt={doctor.name.en}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=300&q=80"
+                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
                     }}
                   />
                 </div>
 
-                {/* Details */}
-                <div className="space-y-2 text-center sm:text-left">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 justify-center sm:justify-start">
-                    <h3 className="text-lg font-bold font-serif text-[#1e4620]">{doctor.name.en}</h3>
-                    <span className="text-xs font-bold bg-[#c59b27]/25 text-[#1e4620] px-2 py-0.5 rounded-full w-fit mx-auto sm:mx-0">
+                {/* Details below */}
+                <div className="p-6 space-y-2 text-left flex-1 flex flex-col">
+                  <div className="flex flex-row items-center gap-2">
+                    <h3 className="text-lg font-bold font-serif text-[#1e4620] group-hover:text-[#c59b27] transition-colors">{doctor.name.en}</h3>
+                    <span className="text-xs font-bold bg-[#c59b27]/25 text-[#1e4620] px-2 py-0.5 rounded-full w-fit">
                       {doctor.experience}
                     </span>
                   </div>
@@ -280,9 +219,19 @@ export default function Home() {
                     {doctor.role.en} • {doctor.specialty.en}
                   </p>
                   <p className="text-xs text-gray-400 font-semibold italic">{doctor.name.ml}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                  <p className="text-sm text-gray-600 leading-relaxed font-medium flex-1">
                     {doctor.bio.en}
                   </p>
+                  {/* Book Consultation CTA */}
+                  <div className="pt-4 border-t border-[#e2dacb]/40 mt-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); setIsBookingOpen(true) }}
+                      className="w-full bg-[#1e4620] hover:bg-[#c59b27] text-white text-sm font-bold py-2.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      <Calendar size={15} />
+                      Book Consultation
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
@@ -377,9 +326,9 @@ export default function Home() {
 
       <Footer />
 
-      <BookingModal 
-        isOpen={isBookingOpen} 
-        onClose={() => setIsBookingOpen(false)} 
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
         initialTreatmentId={selectedTreatmentId}
         initialPackageId={selectedPackageId}
       />

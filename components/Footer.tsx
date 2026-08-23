@@ -31,10 +31,10 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-sm text-gray-300">
               <li><a href="#treatments" className="hover:text-[#c59b27] transition">Panchakarma Detox</a></li>
-              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Shirodhara (Anxiety Relief)</a></li>
-              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Abhyanga Massage</a></li>
-              <li><a href="#packages" className="hover:text-[#c59b27] transition">14-Day Spine & Joint Care</a></li>
-              <li><a href="#packages" className="hover:text-[#c59b27] transition">7-Day Rejuvenation Stay</a></li>
+              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Postnatal Care</a></li>
+              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Psoriasis Treatment</a></li>
+              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Varicose Vein Treatment</a></li>
+              <li><a href="#treatments" className="hover:text-[#c59b27] transition">Post-Stroke Care</a></li>
             </ul>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={16} className="text-[#c59b27] shrink-0" />
-                <a href="tel:+914936220500" className="hover:text-[#c59b27] transition">+91 4936 220 500</a>
+                <a href="tel:+919961400633" className="hover:text-[#c59b27] transition">+91 9961400633</a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail size={16} className="text-[#c59b27] shrink-0" />
@@ -88,16 +88,8 @@ export default function Footer() {
         <div className="border-t border-gray-800/80 pt-8 pb-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-wrap items-center gap-6 justify-center md:justify-start">
             <div className="flex items-center gap-2 text-xs text-gray-400">
-              <Shield size={16} className="text-[#c59b27]" />
-              <span>NABH Accredited Hospital</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-gray-400">
               <Award size={16} className="text-[#c59b27]" />
               <span>Ayush Shield Certification</span>
-            </div>
-            <div className="flex items-center gap-2 text-xs text-gray-400">
-              <CheckCircle size={16} className="text-[#c59b27]" />
-              <span>Govt. of Kerala Tourism Approved Green Leaf</span>
             </div>
           </div>
           <p className="text-xs text-gray-500 text-center md:text-right">

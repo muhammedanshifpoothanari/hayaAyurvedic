@@ -92,7 +92,7 @@ export default function Slider() {
                     href="#treatments"
                     className="border border-[#fdfbf7]/40 hover:bg-[#fdfbf7]/10 text-[#fdfbf7] px-6 py-3 rounded-xl text-sm font-bold transition"
                   >
-                    View Programs
+                    View Treatments
                   </a>
                 </div>
               </div>

@@ -7,7 +7,6 @@ import BookingModal from './BookingModal'
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'Treatments', href: '#treatments' },
-  { label: 'Wellness Packages', href: '#packages' },
   { label: 'Our Physicians', href: '#doctors' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact Us', href: '#contact' },
