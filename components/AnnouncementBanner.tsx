@@ -5,7 +5,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 
 const announcements = {
   en: [
-    'Authentic Kerala Ayurvedic Healing in Wayanad',
+    'Authentic Kerala Ayurvedic Healing in Kollam',
     'NABH Accredited & Certified Physicians',
     'Book online video consultations or residential stays',
     'Experience traditional Panchakarma & rejuvenation retreats',

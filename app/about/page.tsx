@@ -52,7 +52,7 @@ export default function AboutPage() {
           About Haya Ayurvedics
         </h1>
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
-          Pioneering premium traditional Ayurvedic clinical care and residential detoxification programs in Wayanad, Kerala.
+          Pioneering premium traditional Ayurvedic clinical care and residential detoxification programs in Kollam, Kerala.
         </p>
       </div>
 
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </h2>
         <div className="space-y-6 text-sm md:text-base text-gray-600 leading-relaxed font-medium">
           <p>
-            <strong>Haya Ayurvedics</strong> is a state-of-the-art Ayurvedic Hospital and Wellness Retreat nestled in the serene, oxygen-rich hills of Wayanad, Kerala, India. Rooted in the traditional Ashtavaidya wisdom of Kerala, we specialize in Panchakarma (deep cleansing), spine care, rejuvenation, and lifestyle illness management.
+            <strong>Haya Ayurvedics</strong> is a state-of-the-art Ayurvedic Hospital and Wellness Retreat nestled in the serene, oxygen-rich hills of Kollam, Kerala, India. Rooted in the traditional Ashtavaidya wisdom of Kerala, we specialize in Panchakarma (deep cleansing), spine care, rejuvenation, and lifestyle illness management.
           </p>
           <p>
             Our sanctuary is designed for individuals seeking relief from modern day stressors, chronic joint/musculoskeletal pains, and metabolic disorders. Under the guidance of our Chief Physician, <strong>Dr. Madhavan Namboothiri</strong>, we curate bespoke treatment modules that include therapeutic massages, herbal steam baths, internal purification procedures, custom diet logs, and daily yoga classes.

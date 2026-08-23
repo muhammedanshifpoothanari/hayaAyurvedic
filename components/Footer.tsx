@@ -20,7 +20,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-gray-300 font-medium leading-relaxed max-w-xs mb-6">
-              Nestled in the lush hills of Wayanad, Kerala, we provide authentic Ayurvedic healthcare programs. Dedicated to restoring natural vitality and cellular health through holistic Panchakarma therapies and custom physician consultations at Haya Ayurvedics.
+              Nestled in the lush hills of Kollam, Kerala, we provide authentic Ayurvedic healthcare programs. Dedicated to restoring natural vitality and cellular health through holistic Panchakarma therapies and custom physician consultations at Haya Ayurvedics.
             </p>
           </div>
 
@@ -68,7 +68,7 @@ export default function Footer() {
                 <MapPin size={18} className="text-[#c59b27] shrink-0 mt-0.5" />
                 <span>
                   Haya Hills, P.O. Kalpetta,<br />
-                  Wayanad, Kerala - 673121, India
+                  Kollam, Kerala - 691001, India
                 </span>
               </li>
               <li className="flex items-center gap-2.5">

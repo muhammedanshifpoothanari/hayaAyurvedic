@@ -9,7 +9,7 @@ const slides = [
     image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80",
     title: "Rejuvenate Your Soul in God's Own Country",
     subtitle: "AUTHENTIC KERALA AYURVEDA",
-    desc: "Experience ancient wellness traditions in our serene sanctuary in Wayanad, Kerala. Restore your body's natural state of balance.",
+    desc: "Experience ancient wellness traditions in our serene sanctuary in Kollam, Kerala. Restore your body's natural state of balance.",
     cta: "Book Healing Stays"
   },
   {

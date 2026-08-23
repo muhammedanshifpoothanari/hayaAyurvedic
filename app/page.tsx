@@ -66,7 +66,7 @@ export default function Home() {
             </h2>
             <div className="w-20 h-1 bg-[#c59b27] rounded"></div>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
-              Located in the scenic hills of Wayanad, Kerala, Haya Ayurvedics is a premier Ayurvedic hospital specializing in restorative, detoxifying, and therapeutic treatments. We combine authentic Vedic scriptures with modern diagnostics to treat the root causes of chronic ailments.
+              Located in the scenic hills of Kollam, Kerala, Haya Ayurvedics is a premier Ayurvedic hospital specializing in restorative, detoxifying, and therapeutic treatments. We combine authentic Vedic scriptures with modern diagnostics to treat the root causes of chronic ailments.
             </p>
             <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium">
               Our residential facility provides guests with organic vegetarian diets prepared according to their body constitution (Prakruti), personalized herbal medicines, daily yoga sessions, and traditional therapies administered by certified therapists under expert medical guidance.
@@ -271,7 +271,7 @@ export default function Home() {
             <div className="bg-[#f4efe6]/30 p-8 rounded-3xl border border-[#e2dacb]/40 relative space-y-4">
               <span className="text-5xl text-[#c59b27] font-serif absolute top-3 left-4 opacity-30">“</span>
               <p className="text-sm text-gray-600 leading-relaxed font-medium pt-4">
-                "Amazing experience! The location in Wayanad is pristine and quiet. The Panchakarma detox program restored my energy, and the organic vegetarian cuisine was delicious."
+                "Amazing experience! The location in Kollam is pristine and quiet. The Panchakarma detox program restored my energy, and the organic vegetarian cuisine was delicious."
               </p>
               <div className="border-t border-[#e2dacb]/60 pt-4 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#1e4620] flex items-center justify-center text-[#fdfbf7] font-bold text-xs uppercase">

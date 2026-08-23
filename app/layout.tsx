@@ -7,7 +7,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Haya Ayurvedics - Premium Kerala Ayurvedic Hospital & Wellness',
-  description: 'Haya Ayurvedics in Wayanad, Kerala offers premium quality traditional Ayurvedic treatments, wellness packages, and expert consultations in an NABH accredited facility.',
+  description: 'Haya Ayurvedics in Kollam, Kerala offers premium quality traditional Ayurvedic treatments, wellness packages, and expert consultations in an NABH accredited facility.',
   generator: 'v0.app',
   icons: {
     icon: '/icon.svg',

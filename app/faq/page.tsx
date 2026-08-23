@@ -23,7 +23,7 @@ export default function FAQPage() {
     },
     {
       q: 'Do you assist with airport pickups for international guests?',
-      a: 'Yes! We arrange direct cab pickup and drop-off services for our guests from Calicut International Airport (CCJ) and Kannur International Airport (CNN), which are the closest airports to our Wayanad sanctuary.',
+      a: 'Yes! We arrange direct cab pickup and drop-off services for our guests from Calicut International Airport (CCJ) and Kannur International Airport (CNN), which are the closest airports to our Kollam centre.',
     },
     {
       q: 'Can I submit my medical reports before booking?',

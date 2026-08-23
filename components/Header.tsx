@@ -34,7 +34,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline-flex items-center gap-1">
               <MapPin size={13} className="text-[#c59b27]" />
-              Wayanad, Kerala, India
+              Kollam, Kerala, India
             </span>
             <span className="flex items-center gap-1">
               <Phone size={13} className="text-[#c59b27]" />

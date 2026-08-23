@@ -74,7 +74,7 @@ export default function AdminPOPage() {
             <p className="text-xs text-[#c59b27] font-semibold mt-1">Kerala Ayurvedic Hospital & Wellness Center</p>
           </div>
           <div className="text-right text-xs text-gray-200/90 font-medium">
-            <p>Wayanad, Kerala, India</p>
+            <p>Kollam, Kerala, India</p>
             <p>Contact: +91 99614 00633</p>
           </div>
         </div>
@@ -206,7 +206,7 @@ export default function AdminPOPage() {
 
         {/* Official Letterhead Footer */}
         <div className="w-full bg-[#1e4620] text-center text-[#fdfbf7]/80 text-[10px] py-4 border-t-2 border-[#c59b27]">
-          <p>© {new Date().getFullYear()} Haya Ayurvedics. All rights reserved. Wayanad, Kerala, India.</p>
+          <p>© {new Date().getFullYear()} Haya Ayurvedics. All rights reserved. Kollam, Kerala, India.</p>
         </div>
       </div>
     </div>

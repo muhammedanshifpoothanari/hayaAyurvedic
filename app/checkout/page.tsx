@@ -301,7 +301,7 @@ function CheckoutContent() {
         paymentMethod: 'tabby',
         shippingAddress: {
           street: formData.address || 'Address provided via phone',
-          city: formData.city || 'Wayanad',
+          city: formData.city || 'Kollam',
           postCode: formData.postCode || '673121',
           country: formData.country,
         }
