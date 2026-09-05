@@ -41,12 +41,18 @@ export default function DoctorTabs({ activeId, onSelect }: DoctorTabsProps) {
 
             {/* Name label */}
             <span
-              className={`text-xs md:text-sm font-semibold text-center max-w-[96px] leading-tight transition-colors duration-200 ${
+              className={`text-xs md:text-sm font-semibold text-center whitespace-nowrap transition-colors duration-200 ${
                 isActive ? 'text-[#1e4620]' : 'text-gray-500 group-hover:text-[#1e4620]'
               }`}
             >
               {doctor.name.en}
             </span>
+            {/* Qualification badge */}
+            {doctor.qualification && (
+              <span className="text-[10px] font-bold text-[#c59b27] uppercase tracking-wider">
+                {doctor.qualification}
+              </span>
+            )}
           </button>
         )
       })}

@@ -24,6 +24,7 @@ export interface Doctor {
   specialty: { en: string; ml: string };
   experience: string;
   education?: string;
+  qualification?: string;
   bio: { en: string; ml: string };
   experienceList?: string[];
   image: string;
@@ -125,6 +126,7 @@ export const doctors: Doctor[] = [
     role: { en: "Chief Physician & Managing Director", ml: "ചീഫ് ഫിസിഷ്യൻ & മാനേജിങ് ഡയറക്ടർ" },
     specialty: { en: "Panchakarma & Ayurvedic Medicine", ml: "പഞ്ചകർമ്മം & ആയുർവേദ ചികിത്സ" },
     experience: "12+ Years",
+    qualification: "BAMS",
     education: "BAMS – Amrita Ayurveda Medical College, Vallikkavu, Kollam",
     bio: {
       en: "Dr. Nimmy R. S is an accomplished Ayurvedic practitioner with over twelve years of experience, having graduated from Amrita Ayurveda Medical College, Vallikkavu, Kollam District. She has served in leading Ayurvedic centres across Kerala and Coimbatore before founding Haya Ayurvedics, where she now serves as Chief Physician and Managing Director.",
