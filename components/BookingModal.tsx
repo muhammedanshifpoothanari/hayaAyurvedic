@@ -25,7 +25,7 @@ export default function BookingModal({
   )
   const [preferredDate, setPreferredDate] = useState('')
   const [timeSlot, setTimeSlot] = useState('morning')
-  const [selectedDoctor, setSelectedDoctor] = useState('doc-namboothiri')
+  const [selectedDoctor, setSelectedDoctor] = useState('doc-nimmy')
   const [message, setMessage] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)

@@ -181,61 +181,92 @@ export default function Home() {
               Healing Hands
             </span>
             <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#1e4620]">
-              Our Expert Ayurvedic Physicians
+              Our Expert Ayurvedic Physician
             </h2>
             <p className="text-gray-600 text-sm md:text-base font-medium">
-              Consult with our panel of certified medical practitioners representing traditional healing traditions and modern certifications.
+              Guided by tradition, driven by results — meet the practitioner behind Haya Ayurvedics.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {doctors.map((doctor) => (
-              <div
-                key={doctor.id}
-                onClick={() => setIsBookingOpen(true)}
-                className="bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-md border border-[#e2dacb]/50 flex flex-col cursor-pointer group hover:shadow-xl hover:border-[#c59b27]/40 transition-all duration-300"
-              >
-                {/* Photo — full width at top */}
-                <div className="w-full h-64 overflow-hidden">
-                  <img
-                    src={doctor.image}
-                    alt={doctor.name.en}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
-                    }}
-                  />
+          {doctors.map((doctor) => (
+            <div
+              key={doctor.id}
+              className="max-w-5xl mx-auto bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-xl border border-[#e2dacb]/50"
+            >
+              {/* Top banner strip */}
+              <div className="h-2 w-full bg-gradient-to-r from-[#1e4620] via-[#c59b27] to-[#1e4620]" />
+
+              <div className="flex flex-col md:flex-row gap-0">
+                {/* Left — Photo */}
+                <div className="md:w-80 w-full flex-shrink-0 relative">
+                  <div className="h-96 md:h-full overflow-hidden">
+                    <img
+                      src={doctor.image}
+                      alt={doctor.name.en}
+                      className="w-full h-full object-cover object-top"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                      }}
+                    />
+                  </div>
+                  {/* Overlay badge */}
+                  <div className="absolute bottom-4 left-4 right-4 bg-[#1e4620]/90 backdrop-blur-sm text-white rounded-2xl p-4 text-center">
+                    <p className="text-lg font-bold font-serif leading-tight">{doctor.name.en}</p>
+                    <p className="text-[#c59b27] text-xs font-bold uppercase tracking-wider mt-1">{doctor.role.en}</p>
+                    <p className="text-white/70 text-xs mt-1 font-medium italic">{doctor.name.ml}</p>
+                  </div>
                 </div>
 
-                {/* Details below */}
-                <div className="p-6 space-y-2 text-left flex-1 flex flex-col">
-                  <div className="flex flex-row items-center gap-2">
-                    <h3 className="text-lg font-bold font-serif text-[#1e4620] group-hover:text-[#c59b27] transition-colors">{doctor.name.en}</h3>
-                    <span className="text-xs font-bold bg-[#c59b27]/25 text-[#1e4620] px-2 py-0.5 rounded-full w-fit">
-                      {doctor.experience}
-                    </span>
+                {/* Right — Details */}
+                <div className="flex-1 p-8 space-y-6">
+                  {/* Tags row */}
+                  <div className="flex flex-wrap gap-2">
+                    <span className="bg-[#c59b27]/20 text-[#1e4620] text-xs font-bold px-3 py-1 rounded-full">{doctor.experience}</span>
+                    <span className="bg-[#1e4620]/10 text-[#1e4620] text-xs font-bold px-3 py-1 rounded-full">{doctor.specialty.en}</span>
                   </div>
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-wider">
-                    {doctor.role.en} • {doctor.specialty.en}
-                  </p>
-                  <p className="text-xs text-gray-400 font-semibold italic">{doctor.name.ml}</p>
-                  <p className="text-sm text-gray-600 leading-relaxed font-medium flex-1">
+
+                  {/* Education */}
+                  {doctor.education && (
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#c59b27] mt-0.5">🎓</span>
+                      <p className="text-sm text-gray-600 font-medium">{doctor.education}</p>
+                    </div>
+                  )}
+
+                  {/* Bio */}
+                  <p className="text-sm text-gray-700 leading-relaxed font-medium border-l-4 border-[#c59b27]/40 pl-4">
                     {doctor.bio.en}
                   </p>
-                  {/* Book Consultation CTA */}
-                  <div className="pt-4 border-t border-[#e2dacb]/40 mt-2">
+
+                  {/* Experience Timeline */}
+                  {doctor.experienceList && doctor.experienceList.length > 0 && (
+                    <div>
+                      <p className="text-xs uppercase tracking-widest font-extrabold text-[#1e4620] mb-4">Career Journey</p>
+                      <div className="space-y-2">
+                        {doctor.experienceList.map((item, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className="mt-1.5 w-2 h-2 rounded-full bg-[#c59b27] flex-shrink-0" />
+                            <p className="text-sm text-gray-600 font-medium leading-snug">{item}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* CTA */}
+                  <div className="pt-2">
                     <button
-                      onClick={(e) => { e.stopPropagation(); setIsBookingOpen(true) }}
-                      className="w-full bg-[#1e4620] hover:bg-[#c59b27] text-white text-sm font-bold py-2.5 rounded-xl transition-all duration-300 flex items-center justify-center gap-2"
+                      onClick={() => setIsBookingOpen(true)}
+                      className="bg-[#1e4620] hover:bg-[#c59b27] text-white text-sm font-bold py-3 px-8 rounded-xl transition-all duration-300 flex items-center gap-2"
                     >
                       <Calendar size={15} />
-                      Book Consultation
+                      Book Consultation with Dr. Nimmy
                     </button>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 

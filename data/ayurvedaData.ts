@@ -23,7 +23,9 @@ export interface Doctor {
   role: { en: string; ml: string };
   specialty: { en: string; ml: string };
   experience: string;
+  education?: string;
   bio: { en: string; ml: string };
+  experienceList?: string[];
   image: string;
 }
 
@@ -119,50 +121,24 @@ export const packages: Package[] = [];
 export const doctors: Doctor[] = [
   {
     id: "doc-nimmy",
-    name: { en: "Dr. Nimmy RS", ml: "ഡോ. നിമ്മി ആർ.എസ്" },
-    role: { en: "Chief Physician", ml: "ചീഫ് ഫിസിഷ്യൻ" },
-    specialty: { en: "Panchakarma & Yoga Therapy", ml: "പഞ്ചകർമ്മവും യോഗ ചികിത്സയും" },
-    experience: "15+ Years",
-    bio: {
-      en: "Dr. Nimmy RS is the Chief Physician at Haya Ayurvedics, specialising in authentic Panchakarma detoxification, yoga-integrated healing, and customised herbal therapies. She leads a dedicated team delivering personalised Ayurvedic care rooted in traditional Kerala wisdom.",
-      ml: "ഹയ ആയുർവേദിക്‌സിലെ ചീഫ് ഫിസിഷ്യൻ, ഡോ. നിമ്മി ആർ.എസ്., പഞ്ചകർമ്മ ശുദ്ധീകരണം, യോഗ സമ്മിശ്ര ചികിത്സ, ഔഷധ ചികിത്സ എന്നിവയിൽ വിദഗ്ദ്ധ."
-    },
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: "doc-priya",
-    name: { en: "Dr. Priya Menon", ml: "ഡോ. പ്രിയ മേനോൻ" },
-    role: { en: "Senior Ayurvedic Consultant", ml: "സീനിയർ ആയുർവേദ കൺസൾട്ടന്റ്" },
-    specialty: { en: "Women's Wellness & Postnatal Care", ml: "സ്ത്രീ ആരോഗ്യം & പ്രസവാനന്തര പരിചരണം" },
+    name: { en: "Dr. Nimmy. R. S", ml: "ഡോ. നിമ്മി ആർ.എസ്" },
+    role: { en: "Chief Physician & Managing Director", ml: "ചീഫ് ഫിസിഷ്യൻ & മാനേജിങ് ഡയറക്ടർ" },
+    specialty: { en: "Panchakarma & Ayurvedic Medicine", ml: "പഞ്ചകർമ്മം & ആയുർവേദ ചികിത്സ" },
     experience: "12+ Years",
+    education: "BAMS – Amrita Ayurveda Medical College, Vallikkavu, Kollam",
     bio: {
-      en: "Dr. Priya Menon specialises in women's holistic health, postnatal recovery, and hormonal balance through customised Ayurvedic protocols. Her compassionate approach has helped hundreds of mothers regain strength and vitality.",
-      ml: "ഡോ. പ്രിയ മേനോൻ സ്ത്രീ ആരോഗ്യം, പ്രസവാനന്തര ചികിത്സ, ഹോർമോൺ സന്തുലനം എന്നിവയിൽ വിദഗ്ദ്ധ."
+      en: "Dr. Nimmy R. S is an accomplished Ayurvedic practitioner with over twelve years of experience, having graduated from Amrita Ayurveda Medical College, Vallikkavu, Kollam District. She has served in leading Ayurvedic centres across Kerala and Coimbatore before founding Haya Ayurvedics, where she now serves as Chief Physician and Managing Director.",
+      ml: "ഡോ. നിമ്മി ആർ.എസ്, കൊല്ലം ജില്ലയിലെ വള്ളിക്കാവിലുള്ള അമൃത ആയുർവേദ മെഡിക്കൽ കോളേജിൽ നിന്ന് ബിരുദം നേടിയ, പന്ത്രണ്ടു വർഷത്തിലേറെ അനുഭവമുള്ള ആയുർവേദ വൈദ്യ. ഹയ ആയുർവേദിക്‌സ് ചീഫ് ഫിസിഷ്യനും മാനേജിങ് ഡയറക്ടറുമാണ്."
     },
-    image: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: "doc-rajesh",
-    name: { en: "Dr. Rajesh Kumar", ml: "ഡോ. രാജേഷ് കുമാർ" },
-    role: { en: "Spine & Neurology Specialist", ml: "നട്ടെല്ല് & നാഡീ വിദഗ്ദ്ധൻ" },
-    specialty: { en: "Neuro-Rehabilitation & Stroke Care", ml: "നാഡീ പുനരധിവാസം & പക്ഷാഘാത ചികിത്സ" },
-    experience: "18+ Years",
-    bio: {
-      en: "Dr. Rajesh Kumar brings over 18 years of expertise in Ayurvedic neuro-rehabilitation, managing post-stroke recovery, spinal disorders, and chronic neurological conditions using classical Panchakarma procedures.",
-      ml: "ഡോ. രാജേഷ് കുമാർ, 18 വർഷത്തിലേറെ അനുഭവജ്ഞാനത്തോടെ, പക്ഷാഘാതാനന്തര ചികിത്സ, നട്ടെല്ല് തകരാറുകൾ, നാഡീ രോഗങ്ങൾ എന്നിവ ക്ലാസിക്കൽ പഞ്ചകർമ്മ ചികിത്സകൊണ്ട് നിര്‍വ്വഹിക്കുന്നു."
-    },
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
-  },
-  {
-    id: "doc-anitha",
-    name: { en: "Dr. Anitha Krishnan", ml: "ഡോ. അനിത കൃഷ്ണൻ" },
-    role: { en: "Skin & Dermatology Consultant", ml: "ചർമ്മ ചികിത്സ കൺസൾട്ടന്റ്" },
-    specialty: { en: "Psoriasis, Dandruff & Skin Disorders", ml: "സോറിയാസിസ്, ഡാൻഡ്രഫ് & ചർമ്മ രോഗങ്ങൾ" },
-    experience: "10+ Years",
-    bio: {
-      en: "Dr. Anitha Krishnan is a dedicated skin health specialist focusing on Ayurvedic management of psoriasis, dandruff, eczema, and other chronic skin conditions using blood-purifying herbs and detox therapies.",
-      ml: "ഡോ. അനിത കൃഷ്ണൻ, ആയുർവേദ ഔഷധങ്ങളും ഡിറ്റോക്സ് ചികിത്സകളും ഉപയോഗിച്ച് സോറിയാസിസ്, ഡാൻഡ്രഫ്, എക്‌സിമ തുടങ്ങിയ ത്വക്ക് രോഗങ്ങൾ ചികിത്സിക്കുന്ന വിദഗ്ദ്ധ."
-    },
-    image: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80"
+    experienceList: [
+      "2 years at Dathri Ayurveda & Panchakarma Center, Coimbatore",
+      "Promoted to Dathri Ayurveda & Panchakarma Center, Ernakulam",
+      "2016–2018: Kottakkal Arya Vaidyashala Clinic, Edappally, Kollam District",
+      "2018–2021: Valiyath Institute of Medical Sciences – Ayurvedic Physician",
+      "2021–2023: Al Arjoon Ayurveda & Hijama Center – Administrator & Medical Officer",
+      "Telemedicine consultations ensuring accessible patient care",
+      "Present: Chief Physician & Managing Director, Haya Ayurvedics"
+    ],
+    image: "/doctors/nimmy.jpg"
   }
 ];
