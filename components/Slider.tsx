@@ -50,7 +50,7 @@ export default function Slider() {
   }
 
   return (
-    <section id="home" className="relative w-full h-[450px] md:h-[650px] overflow-hidden bg-[#122b14]">
+    <section id="home" className="relative w-full h-[320px] md:h-[420px] overflow-hidden bg-[#122b14]">
       {/* Slides */}
       {slides.map((slide, idx) => (
         <div
@@ -74,7 +74,7 @@ export default function Slider() {
                 <span className="inline-block text-[#c59b27] text-xs md:text-sm font-extrabold uppercase tracking-widest bg-[#c59b27]/10 px-3 py-1 rounded-full border border-[#c59b27]/30 backdrop-blur-sm">
                   {slide.subtitle}
                 </span>
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold font-serif text-[#fdfbf7] leading-tight">
+                <h1 className="text-3xl font-bold text-[#fdfbf7] leading-tight" style={{ fontFamily: 'Arial, sans-serif', fontWeight: 700 }}>
                   {slide.title}
                 </h1>
                 <p className="text-sm md:text-lg text-gray-200 font-medium max-w-xl leading-relaxed">

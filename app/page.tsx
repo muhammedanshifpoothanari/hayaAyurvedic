@@ -176,14 +176,14 @@ export default function Home() {
       {/* Expert Doctors Section */}
       <section id="doctors" className="py-20 bg-[#f4efe6]/40 border-t border-[#e2dacb]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="text-left max-w-3xl mb-16 space-y-3">
             <span className="text-xs uppercase tracking-widest font-extrabold text-[#c59b27]">
               Healing Hands
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold font-serif text-[#1e4620]">
+            <h2 className="text-3xl font-bold text-[#1e4620]">
               Our Expert Ayurvedic Physician
             </h2>
-            <p className="text-gray-600 text-sm md:text-base font-medium">
+            <p className="text-gray-600 text-sm font-medium">
               Guided by tradition, driven by results — meet the practitioner behind Haya Ayurvedics.
             </p>
           </div>
@@ -234,9 +234,11 @@ export default function Home() {
                   )}
 
                   {/* Bio */}
-                  <p className="text-sm text-gray-700 leading-relaxed font-medium border-l-4 border-[#c59b27]/40 pl-4">
-                    {doctor.bio.en}
-                  </p>
+                  <div className="border-l-4 border-[#c59b27]/40 pl-4 space-y-3">
+                    {doctor.bio.en.split('\n\n').map((para, i) => (
+                      <p key={i} className="text-sm text-gray-700 leading-relaxed font-medium">{para}</p>
+                    ))}
+                  </div>
 
                   {/* Experience Timeline */}
                   {doctor.experienceList && doctor.experienceList.length > 0 && (

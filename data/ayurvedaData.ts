@@ -122,22 +122,22 @@ export const packages: Package[] = [];
 export const doctors: Doctor[] = [
   {
     id: "doc-nimmy",
-    name: { en: "Dr. Nimmy. R. S", ml: "ഡോ. നിമ്മി ആർ.എസ്" },
+    name: { en: "Dr. Nimmy R. S", ml: "ഡോ. നിമ്മി ആർ.എസ്" },
     role: { en: "Chief Physician & Managing Director", ml: "ചീഫ് ഫിസിഷ്യൻ & മാനേജിങ് ഡയറക്ടർ" },
     specialty: { en: "Panchakarma & Ayurvedic Medicine", ml: "പഞ്ചകർമ്മം & ആയുർവേദ ചികിത്സ" },
     experience: "12+ Years",
     qualification: "BAMS",
     education: "BAMS – Amrita Ayurveda Medical College, Vallikkavu, Kollam",
     bio: {
-      en: "Dr. Nimmy R. S is an accomplished Ayurvedic practitioner with over twelve years of experience, having graduated from Amrita Ayurveda Medical College, Vallikkavu, Kollam District. She has served in leading Ayurvedic centres across Kerala and Coimbatore before founding Haya Ayurvedics, where she now serves as Chief Physician and Managing Director.",
+      en: "Dr. Nimmy R. S is an Ayurvedic practitioner with over 12 years of experience in clinical care, Panchakarma, telemedicine, and healthcare management. She graduated from Amrita Ayurveda Medical College, Vallikkavu, Kollam, and has worked with reputed institutions including Dhathri Ayurveda, Kottakkal Arya Vaidya Sala, Valiyath Institute of Medical Sciences, and Al Arjoon Ayurveda & Hijama Centre.\n\nShe serves as the Chief Physician and Managing Director of Haya Ayurvedics, where she combines her clinical expertise and healthcare management experience to deliver personalized, authentic, and patient-focused Ayurvedic care.\n\nHer approach focuses on understanding each patient's individual needs and integrating traditional Ayurvedic principles with a practical, patient-centered approach to wellness.",
       ml: "ഡോ. നിമ്മി ആർ.എസ്, കൊല്ലം ജില്ലയിലെ വള്ളിക്കാവിലുള്ള അമൃത ആയുർവേദ മെഡിക്കൽ കോളേജിൽ നിന്ന് ബിരുദം നേടിയ, പന്ത്രണ്ടു വർഷത്തിലേറെ അനുഭവമുള്ള ആയുർവേദ വൈദ്യ. ഹയ ആയുർവേദിക്‌സ് ചീഫ് ഫിസിഷ്യനും മാനേജിങ് ഡയറക്ടറുമാണ്."
     },
     experienceList: [
-      "2 years at Dathri Ayurveda & Panchakarma Center, Coimbatore",
-      "Promoted to Dathri Ayurveda & Panchakarma Center, Ernakulam",
-      "2016–2018: Kottakkal Arya Vaidyashala Clinic, Edappally, Kollam District",
-      "2018–2021: Valiyath Institute of Medical Sciences – Ayurvedic Physician",
-      "2021–2023: Al Arjoon Ayurveda & Hijama Center – Administrator & Medical Officer",
+      "Dhathri Ayurveda – Panchakarma Center, Coimbatore",
+      "Dhathri Ayurveda – Panchakarma Center, Ernakulam",
+      "Kottakkal Arya Vaidya Sala, Edappally, Kollam District",
+      "Valiyath Institute of Medical Sciences – Ayurvedic Physician",
+      "Al Arjoon Ayurveda & Hijama Centre – Administrator & Medical Officer",
       "Telemedicine consultations ensuring accessible patient care",
       "Present: Chief Physician & Managing Director, Haya Ayurvedics"
     ],

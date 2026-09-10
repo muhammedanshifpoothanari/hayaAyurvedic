@@ -44,16 +44,18 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-[#1e4620]/10 to-transparent py-20 px-4 text-center border-b border-[#e2dacb]/40">
-        <span className="text-xs uppercase tracking-widest font-extrabold text-[#c59b27] mb-2 block">
-          OUR HERITAGE
-        </span>
-        <h1 className="text-4xl md:text-5xl font-bold font-serif text-[#1e4620] mb-4 tracking-tight">
-          About Haya Ayurvedics
-        </h1>
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto font-medium leading-relaxed">
-          Pioneering premium traditional Ayurvedic clinical care and residential detoxification programs in Kollam, Kerala.
-        </p>
+      <div className="bg-gradient-to-b from-[#1e4620]/10 to-transparent py-14 px-4 text-left border-b border-[#e2dacb]/40">
+        <div className="max-w-4xl mx-auto">
+          <span className="text-xs uppercase tracking-widest font-extrabold text-[#c59b27] mb-2 block">
+            OUR HERITAGE
+          </span>
+          <h1 className="text-3xl font-bold text-[#1e4620] mb-4 tracking-tight">
+            About Haya Ayurvedics
+          </h1>
+          <p className="text-base text-gray-600 font-medium leading-relaxed">
+            Pioneering premium traditional Ayurvedic clinical care and residential detoxification programs in Kollam, Kerala.
+          </p>
+        </div>
       </div>
 
       {/* Our Story Section */}
