@@ -60,7 +60,7 @@ export default function Slider() {
           {/* Background Image with Dark & Green Overlay */}
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-[6000ms] ease-out scale-105"
-            style={{ 
+            style={{
               backgroundImage: `url('${slide.image}')`,
               transform: idx === current ? 'scale(1)' : 'scale(1.05)'
             }}

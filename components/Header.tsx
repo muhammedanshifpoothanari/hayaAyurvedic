@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <>
       <header className={`w-full z-50 transition-all duration-300 ${isScrolled ? 'sticky top-0 bg-[#fdfbf7]/90 backdrop-blur-md shadow-md border-b border-[#e2dacb]/40' : 'relative bg-[#fdfbf7]'}`}>
-        
+
         {/* Top Info Bar */}
         <div className="bg-[#1e4620] text-[#fdfbf7] text-xs px-4 py-2 flex justify-between items-center max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">

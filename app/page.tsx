@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import Slider from '@/components/Slider'
 import Footer from '@/components/Footer'
 import BookingModal from '@/components/BookingModal'
-import DoctorTabs from '@/components/DoctorTabs'
+import PhysicianSection from '@/components/PhysicianSection'
 import { treatments, packages, doctors } from '@/data/ayurvedaData'
 import { Check, Calendar, ArrowRight, ShieldCheck, Heart, User, Clock, Compass } from 'lucide-react'
 
@@ -13,7 +13,6 @@ export default function Home() {
   const [isBookingOpen, setIsBookingOpen] = useState(false)
   const [selectedTreatmentId, setSelectedTreatmentId] = useState('')
   const [selectedPackageId, setSelectedPackageId] = useState('')
-  const [activeDoctorId, setActiveDoctorId] = useState(doctors[0]?.id ?? '')
 
   const openBookingForTreatment = (id: string) => {
     setSelectedTreatmentId(id)
@@ -32,38 +31,24 @@ export default function Home() {
       <Header />
       <Slider />
 
-      {/* Doctor Tab Strip — right after banner for instant visibility */}
-      <section className="relative bg-[#fdfbf7] border-b border-[#e2dacb]/50 py-8 overflow-hidden">
-
-        {/* Full crossing grid — small cells matching reference */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Crect width='30' height='30' fill='none'/%3E%3Cline x1='0' y1='0' x2='30' y2='0' stroke='%23c8a84b' stroke-width='0.5' stroke-opacity='0.35'/%3E%3Cline x1='0' y1='0' x2='0' y2='30' stroke='%23c8a84b' stroke-width='0.5' stroke-opacity='0.35'/%3E%3C/svg%3E")`,
-            backgroundSize: '30px 30px',
-          }}
-        />
-
-        {/* Left & right vignette fades */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#fdfbf7] to-transparent z-10" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#fdfbf7] to-transparent z-10" />
-
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-[10px] uppercase tracking-widest font-extrabold text-[#c59b27] mb-5">Meet Our Physicians</p>
-          <DoctorTabs activeId={activeDoctorId} onSelect={setActiveDoctorId} />
-        </div>
-      </section>
+      {/* Physician Section — matching provided design */}
+      <PhysicianSection imageSrc="/doctors/dr-nimmy.png" />
 
       {/* Intro section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Welcome to HAYA AYURVEDICS heading matching reference */}
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-xl sm:text-2xl font-serif italic text-[#c59b27]">Welcome to</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-wider text-[#c59b27] mt-1">
+            HAYA AYURVEDICS
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            <span className="text-sm font-extrabold uppercase tracking-widest text-[#c59b27]">
-              Welcome to Haya Ayurvedics
-            </span>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-[#1e4620] leading-tight">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold font-serif text-[#1e4620] leading-tight">
               Restore Balance, Vitality, and Serenity to Your Life
-            </h2>
+            </h3>
             <div className="w-20 h-1 bg-[#c59b27] rounded"></div>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
               Located in the scenic hills of Kollam, Kerala, Haya Ayurvedics is a premier Ayurvedic hospital specializing in restorative, detoxifying, and therapeutic treatments. We combine authentic Vedic scriptures with modern diagnostics to treat the root causes of chronic ailments.
@@ -173,104 +158,6 @@ export default function Home() {
 
 
 
-      {/* Expert Doctors Section */}
-      <section id="doctors" className="py-20 bg-[#f4efe6]/40 border-t border-[#e2dacb]/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-left max-w-3xl mb-16 space-y-3">
-            <span className="text-xs uppercase tracking-widest font-extrabold text-[#c59b27]">
-              Healing Hands
-            </span>
-            <h2 className="text-3xl font-bold text-[#1e4620]">
-              Our Expert Ayurvedic Physician
-            </h2>
-            <p className="text-gray-600 text-sm font-medium">
-              Guided by tradition, driven by results — meet the practitioner behind Haya Ayurvedics.
-            </p>
-          </div>
-
-          {doctors.map((doctor) => (
-            <div
-              key={doctor.id}
-              className="max-w-5xl mx-auto bg-[#fdfbf7] rounded-3xl overflow-hidden shadow-xl border border-[#e2dacb]/50"
-            >
-              {/* Top banner strip */}
-              <div className="h-2 w-full bg-gradient-to-r from-[#1e4620] via-[#c59b27] to-[#1e4620]" />
-
-              <div className="flex flex-col md:flex-row gap-0">
-                {/* Left — Photo */}
-                <div className="md:w-80 w-full flex-shrink-0 relative">
-                  <div className="h-96 md:h-full overflow-hidden">
-                    <img
-                      src={doctor.image}
-                      alt={doctor.name.en}
-                      className="w-full h-full object-cover object-top"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
-                      }}
-                    />
-                  </div>
-                  {/* Overlay badge */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-[#1e4620]/90 backdrop-blur-sm text-white rounded-2xl p-4 text-center">
-                    <p className="text-lg font-bold font-serif leading-tight">{doctor.name.en}</p>
-                    <p className="text-[#c59b27] text-xs font-bold uppercase tracking-wider mt-1">{doctor.role.en}</p>
-                    <p className="text-white/70 text-xs mt-1 font-medium italic">{doctor.name.ml}</p>
-                  </div>
-                </div>
-
-                {/* Right — Details */}
-                <div className="flex-1 p-8 space-y-6">
-                  {/* Tags row */}
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-[#c59b27]/20 text-[#1e4620] text-xs font-bold px-3 py-1 rounded-full">{doctor.experience}</span>
-                    <span className="bg-[#1e4620]/10 text-[#1e4620] text-xs font-bold px-3 py-1 rounded-full">{doctor.specialty.en}</span>
-                  </div>
-
-                  {/* Education */}
-                  {doctor.education && (
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#c59b27] mt-0.5">🎓</span>
-                      <p className="text-sm text-gray-600 font-medium">{doctor.education}</p>
-                    </div>
-                  )}
-
-                  {/* Bio */}
-                  <div className="border-l-4 border-[#c59b27]/40 pl-4 space-y-3">
-                    {doctor.bio.en.split('\n\n').map((para, i) => (
-                      <p key={i} className="text-sm text-gray-700 leading-relaxed font-medium">{para}</p>
-                    ))}
-                  </div>
-
-                  {/* Experience Timeline */}
-                  {doctor.experienceList && doctor.experienceList.length > 0 && (
-                    <div>
-                      <p className="text-xs uppercase tracking-widest font-extrabold text-[#1e4620] mb-4">Career Journey</p>
-                      <div className="space-y-2">
-                        {doctor.experienceList.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="mt-1.5 w-2 h-2 rounded-full bg-[#c59b27] flex-shrink-0" />
-                            <p className="text-sm text-gray-600 font-medium leading-snug">{item}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* CTA */}
-                  <div className="pt-2">
-                    <button
-                      onClick={() => setIsBookingOpen(true)}
-                      className="bg-[#1e4620] hover:bg-[#c59b27] text-white text-sm font-bold py-3 px-8 rounded-xl transition-all duration-300 flex items-center gap-2"
-                    >
-                      <Calendar size={15} />
-                      Book Consultation with Dr. Nimmy
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Testimonials */}
       <section id="testimonials" className="py-20 bg-[#fdfbf7]">
