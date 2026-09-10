@@ -1,7 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import WhatsAppWidget from '@/components/WhatsAppWidget'
-import { LanguageProvider } from '@/context/LanguageContext'
 import { CartProvider } from '@/context/CartContext'
 import './globals.css'
 
@@ -28,13 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" className="bg-white scroll-smooth">
       <body className="antialiased bg-white text-foreground font-sans">
-        <LanguageProvider>
-          <CartProvider>
+        <CartProvider>
             {children}
             <WhatsAppWidget />
             {process.env.NODE_ENV === 'production' && <Analytics />}
           </CartProvider>
-        </LanguageProvider>
       </body>
     </html>
   )
